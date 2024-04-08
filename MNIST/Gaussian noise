@@ -1,4 +1,5 @@
 #Below is an example code snippet that adds Gaussian noise to a single test image from the MNIST dataset and then uses the previously defined model to predict the noisy image's label
+#If you want the noise to have a standard deviation (std) greater than 1, you can simply adjust the std parameter in the add_gaussian_noise function.
 
 import numpy as np
 
