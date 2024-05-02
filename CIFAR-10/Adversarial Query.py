@@ -1,4 +1,4 @@
-def adversarial_query(image, epsilon=0.01):
+def adversarial_query(image, epsilon=0.01): # Increase epsilon for more visible change
     # Add small perturbations to create an adversarial example
     perturbation = epsilon * np.sign(np.random.normal(size=image.shape))
     adversarial_image = np.clip(image + perturbation, 0, 1)
@@ -23,9 +23,16 @@ predicted_class = np.argmax(prediction, axis=1)
 print(f"Predicted class for adversarial image: {predicted_class}")
 
 # Display the original and adversarial images with their labelsimport matplotlib.pyplot as plt
-plt.figure(figsize=(10, 5))
+plt.figure(figsize=(10, 5)) #can increase the figure size for a better view (12,6)
 
 plt.subplot(1, 2, 1)
 plt.title("Original Image")
-plt.imshow(image_to_attack, cmap='gray')
+plt.imshow(image_to_attack)
 plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.title("Adversarial Image")
+plt.imshow(adversarial_image)
+plt.axis('off')
+
+plt.show()
